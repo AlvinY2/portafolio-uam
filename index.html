@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Proyectos | UAM Student Branch</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados y animaciones */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+        }
+
+        /* Efecto de gradiente animado para el fondo del hero */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #111827, #4c1d95, #1e293b, #6d28d9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animaciones de entrada al hacer scroll */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.4, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.4, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Estilo de la barra de navegación al hacer scroll */
+        .header-scrolled {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="https://imgs.search.brave.com/JepqmGybzGJDy7plzN0vZt-T93GC2_UF2LD1x8PgZ4E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzIwNDM0NzMucG5n" alt="Logo UAM" class="h-10 w-auto">
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="hover:text-purple-400 transition-colors">Sobre Nosotros</a>
+                <a href="#projects" class="hover:text-purple-400 transition-colors">Proyectos</a>
+                <a href="#contact" class="hover:text-purple-400 transition-colors">Contacto</a>
+            </div>
+            <!-- Botón de menú para móviles -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <span class="sr-only">Abrir menú principal</span>
+                <!-- Icono de Hamburguesa -->
+                <svg class="h-6 w-6" id="menu-open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Icono de Cerrar (X) -->
+                <svg class="h-6 w-6 hidden" id="menu-close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Menú desplegable para móviles -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Sobre Nosotros</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Proyectos</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+
+        <!-- ========== HERO SECTION ========== -->
+        <section id="home" class="h-screen flex items-center justify-center text-center hero-gradient">
+            <div class="px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                    Universidad Autonóma Metropolitana
+                </h1>
+                <p class="text-xl md:text-2xl text-purple-200 mb-8">
+                    Student Branch
+                </p>
+                <a href="#projects" class="bg-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-purple-700 transition-transform transform hover:scale-105 duration-300 ease-in-out inline-block">
+                    Ver nuestros Proyectos
+                </a>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sobre Nosotros</h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Somos un equipo multidisciplinario de estudiantes de la Universidad Autónoma Metropolitana, unidos por una pasión compartida por la tecnología y la innovación. Nuestro objetivo es aplicar el conocimiento adquirido en nuestras carreras para desarrollar proyectos que no solo sean tecnológicamente sólidos, sino que también aporten valor a nuestra comunidad. Creemos en el poder de la colaboración, combinando nuestras diversas habilidades y perspectivas para enfrentar desafíos complejos y crear soluciones creativas e impactantes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS SECTION ========== -->
+        <section id="projects" class="py-20 md:py-32 bg-gray-950">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nuestros Proyectos</h2>
+                    <p class="text-lg text-gray-400">Una selección de nuesstros trabajos más recientes.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Presa Hidroelectrica -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 100ms;">
+                        <img src="https://placehold.co/600x400/4c1d95/ffffff?text=Presa+Hidroeléctrica" alt="Imagen del Proyecto Presa Hidroeléctrica" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Presa Hidroeléctrica</h3>
+                            <p class="text-gray-400 mb-4">Simulación a escala de una presa real.</p>
+                            <a href="proyecto-hidroelectrica.html" class="text-purple-400 font-medium hover:text-purple-300 transition-colors">Ver más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Areas Verdes -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/600x400/166534/ffffff?text=Áreas+Verdes" alt="Imagen del Proyecto Áreas Verdes" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Áreas Verdes</h3>
+                            <p class="text-gray-400 mb-4">Análisis y revitalización de espacios urbanos.</p>
+                            <a href="proyecto-areas-verdes.html" class="text-purple-400 font-medium hover:text-purple-300 transition-colors">Ver más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Salud Mental -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 300ms;">
+                        <img src="https://placehold.co/600x400/0e7490/ffffff?text=Salud+Mental" alt="Imagen del Proyecto Salud Mental" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Salud Mental</h3>
+                            <p class="text-gray-400 mb-4">App de apoyo para el bienestar estudiantil.</p>
+                            <a href="proyecto-salud-mental.html" class="text-purple-400 font-medium hover:text-purple-300 transition-colors">Ver más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Artículo IA -->
+                    <div class="bg-gray-800 rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 fade-in-up" style="transition-delay: 400ms;">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Artículo+IA" alt="Imagen del Artículo sobre IA" class="w-full h-56 object-cover group-hover:opacity-80 transition-opacity">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Artículo sobre Inteligencia Artificial</h3>
+                            <p class="text-gray-400 mb-4">Un análisis sobre el impacto de la IA en el desarrollo de software moderno y las tendencias futuras.</p>
+                            <a href="#" class="text-purple-400 font-medium hover:text-purple-300 transition-colors">Leer Artículo &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section id="contact" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contáctanos</h2>
+                    <p class="text-lg text-gray-400 mb-10">¿Te gustaria colaborar con nostros? Me encantaría saber de ti. ¡Hablemos!</p>
+                    <a href="mailto:tuemail@ejemplo.com" class="bg-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-purple-700 transition-transform transform hover:scale-105 duration-300 ease-in-out inline-block">
+                        Enviar un Correo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-950 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-purple-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" class="hover:text-purple-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+                <a href="#" class="hover:text-purple-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.019c0 4.435 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.019C22 6.477 17.523 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p>&copy; 2024 UAM Student Branch. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica para el menú móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+            });
+            
+            // Cerrar menú móvil al hacer clic en un enlace
+            mobileMenu.addEventListener('click', (event) => {
+                if(event.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                }
+            });
+
+            // Lógica para el fondo del header al hacer scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Lógica para animaciones de entrada
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1, // El elemento se animará cuando el 10% sea visible
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in-up');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
